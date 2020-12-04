@@ -18,7 +18,7 @@ class Advent4
         :byr => lambda {|v| (1920..2002).include? v.to_i},
         :iyr => lambda {|v| (2010..2020).include? v.to_i},
         :eyr => lambda {|v| (2020..2030).include? v.to_i},
-        :hgt => lambda {|v| v =~ /^(\d*)((cm)|(in))$/ and HeightRanges[$2.to_sym].include?($1.to_i)},
+        :hgt => lambda {|v| v =~ /^(\d+)((cm)|(in))$/ and HeightRanges[$2.to_sym].include?($1.to_i)},
         :hcl => lambda {|v| v =~ /^#[0-9a-f]{6}$/},
         :ecl => lambda {|v| EyeColors.include? v},
         :pid => lambda {|v| v =~ /^\d{9}$/}
