@@ -4,7 +4,7 @@ class Advent6
   end
 
   def part1
-    @answers.reduce(0){|s, a| s += a.split.map(&:chars).reduce(:+).uniq.size}
+    @answers.reduce(0){|s, a| s += a.split.map(&:chars).reduce(:|).uniq.size}
   end
 
   def part2
