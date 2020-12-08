@@ -1,12 +1,12 @@
 #!/usr/bin/ruby
-require_relative "advent4"
+require_relative "../../advent4/advent4"
 require "test/unit"
 class TestAdvent4 < Test::Unit::TestCase
  
   def setup
-    @test1_1  = ['test_part1_input.txt', 2]
-    @test2_1  = ['test_part2_valid_input.txt', 4]
-    @test2_2  = ['test_part2_invalid_input.txt', 0]
+    @test1_1  = ['advent4/test_part1_input.txt', 2]
+    @test2_1  = ['advent4/test_part2_valid_input.txt', 4]
+    @test2_2  = ['advent4/test_part2_invalid_input.txt', 0]
   end  
 
   def test_part1
