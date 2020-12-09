@@ -1,6 +1,6 @@
 class Advent4
-  def initialize(input_file)
-    @passports = File.read(input_file).split(/\n{2,}/).map{|id| Passport.new(id)}
+  def initialize(input)
+    @passports = input.split(/\n{2,}/).map{|id| Passport.new(id)}
   end
 
   def part1

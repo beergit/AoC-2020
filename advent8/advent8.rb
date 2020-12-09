@@ -2,9 +2,9 @@ $LOAD_PATH <<  '../lib'
 require 'handheld'
 
 class Advent8
-  def initialize(input_file)
+  def initialize(input)
       @code = []
-      File.readlines(input_file).each_with_index do |inst, line|
+      input.each_line do |inst|
         stmt = inst.split
         @code << {:inst => stmt[0].to_sym, :arg => stmt[1].to_i}
       end  

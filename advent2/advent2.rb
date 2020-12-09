@@ -1,6 +1,6 @@
 class Advent2
-  def initialize(input_file)
-    @policities = File.new(input_file).readlines.map{|line| Policity.new(line)}
+  def initialize(input)
+    @policities = input.each_line.map{|line| Policity.new(line)}
   end
 
   def part1

@@ -1,7 +1,7 @@
 class Advent7
-  def initialize(input_file)
+  def initialize(input)
     @bags =  {}
-    File.readlines(input_file, chomp: true).map{|line| line.split 'contain'}.map do |rule|
+    input.each_line(chomp: true).map{|line| line.split 'contain'}.map do |rule|
       k = rule[0].split
       key = [k[0], k[1]].map(&:to_sym)
       value = []

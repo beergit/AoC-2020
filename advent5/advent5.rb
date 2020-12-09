@@ -1,6 +1,6 @@
 class Advent5
-  def initialize(input_file)
-    decoders = File.readlines(input_file).map{|c| Decoder.new c}
+  def initialize(input)
+    decoders = input.each_line(chomp: true).map{|c| Decoder.new c}
     @codes = decoders.map{|c| c.id} 
   end
   def part1

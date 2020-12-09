@@ -1,29 +1,39 @@
 #!/usr/bin/ruby
-$LOAD_PATH << 'advent9'
 require 'test/unit'
 require 'test/unit/ui/console/testrunner'
-#require_relative "advent1/tc_advent1"
-#require_relative "advent2/tc_advent2"
-#require_relative "advent3/tc_advent3"
-#require_relative "advent4/tc_advent4"
-#require_relative "advent5/tc_advent5"
-#require_relative "advent6/tc_advent6"
-#require_relative "advent7/tc_advent7"
-#require_relative "advent8/tc_advent8"
-require 'tc_advent9'
+$LOAD_PATH <<  './lib'
+(1..24).each do |n|
+  $LOAD_PATH << "advent#{n}"
+  require "tc_advent#{n}"
+end
 
 class AoC2020TestSuite < Test::Unit::TestSuite
     def self.suite
         suites = self.new("AoC Test Suite")
-#        suites << TestAdvent1
-#        suites << TestAdvent2
-#        suites << TestAdvent3
-#        suites << TestAdvent4
-#        suites << TestAdvent5
-#        suites << TestAdvent6
-#        suites << TestAdvent7
-#        suites << TestAdvent8
+        suites << TestAdvent1
+        suites << TestAdvent2
+        suites << TestAdvent3
+        suites << TestAdvent4
+        suites << TestAdvent5
+        suites << TestAdvent6
+        suites << TestAdvent7
+        suites << TestAdvent8
         suites << TestAdvent9
+        suites << TestAdvent10
+        suites << TestAdvent11
+        suites << TestAdvent12
+        suites << TestAdvent13
+        suites << TestAdvent14
+        suites << TestAdvent15
+        suites << TestAdvent16
+        suites << TestAdvent17
+        suites << TestAdvent18
+        suites << TestAdvent19
+        suites << TestAdvent20
+        suites << TestAdvent21
+        suites << TestAdvent22
+        suites << TestAdvent23
+        suites << TestAdvent24
         return suites
     end
 end

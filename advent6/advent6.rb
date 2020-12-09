@@ -1,6 +1,6 @@
 class Advent6
-  def initialize(input_file)
-    @answers = File.read(input_file).split(/\n{2,}/)
+  def initialize(input)
+    @answers = input.split(/\n{2,}/)
   end
 
   def part1
