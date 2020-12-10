@@ -2,4 +2,4 @@
 require_relative 'advent10'
 
 puts "part1: #{Advent10.new(IO.read('input.txt')).part1}"
-puts "part3: #{Advent10.new(IO.read('input.txt')).part2}"
+puts "part2: #{Advent10.new(IO.read('input.txt')).part2}"
