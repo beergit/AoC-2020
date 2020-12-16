@@ -14,6 +14,7 @@ EOF
 
   def setup
     @test1_1  = [TestData, 25]
+    @test2_1  = [TestData, 286]
   end  
 
   def test_part1
@@ -21,5 +22,6 @@ EOF
   end
 
   def test_part2
+    assert_equal(@test2_1[1], Advent12.new(@test2_1[0]).part2)
   end
 end

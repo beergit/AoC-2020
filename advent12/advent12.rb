@@ -43,11 +43,27 @@ def part2
         when :W
           @waypoint[0] -= inst[1]
         when :L
-          @face = Directions.rotate(inst[1]/90)[Directions.index(@face)]
+          case inst[1]
+            when 90
+            @waypoint = [-(@waypoint[1] - @ship[1]) + @ship[0], @waypoint[0] - @ship[0] + @ship[1]]
+            when 180
+            @waypoint = [-(@waypoint[0] - @ship[0]) + @ship[0], -(@waypoint[1] - @ship[1]) + @ship[1]]
+            when 270
+            @waypoint = [@waypoint[1] - @ship[1] + @ship[0], -(@waypoint[0] - @ship[0]) + @ship[1]]
+          end
         when :R
-          @face = Directions.rotate(-inst[1]/90)[Directions.index(@face)]
+          case inst[1]
+            when 90
+            @waypoint = [@waypoint[1] - @ship[1] + @ship[0], -(@waypoint[0] - @ship[0]) + @ship[1]]
+            when 180
+            @waypoint = [-(@waypoint[0] - @ship[0]) + @ship[0], -(@waypoint[1] - @ship[1]) + @ship[1]]
+            when 270
+            @waypoint = [-(@waypoint[1] - @ship[1]) + @ship[0], @waypoint[0] - @ship[0] + @ship[1]]
+          end
         when :F
-          @ship = [@ship[0] + Moves[@face][0]*inst[1], @ship[1] + Moves[@face][1]*inst[1]]
+          prev_ship = Array.new(@ship) 
+          @ship = [@ship[0] + inst[1]*(@waypoint[0] - @ship[0]), @ship[1] + inst[1]*(@waypoint[1] - @ship[1])]
+          @waypoint = [@waypoint[0] + @ship[0] - prev_ship[0], @waypoint[1] + @ship[1] - prev_ship[1]]
       end
     end
     @ship[0].abs + @ship[1].abs
