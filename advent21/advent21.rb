@@ -5,9 +5,9 @@ class Advent21
     @danger_ingredients = {}
     input.each_line do |line|
       receipe = line.split '(contains'    
-      ingreds  = receipe[0].split.map(&:strip).map(&:to_sym)
+      ingreds  = receipe[0].split.map(&:to_sym)
       @ingredients += ingreds
-      (receipe[1][0..-3].split(',')).map(&:strip).map(&:to_sym).each do |allergen|
+      (receipe[1][0..-3].split(',')).map(&:to_sym).each do |allergen|
         receipes[allergen] ||= ingreds
         receipes[allergen] &= ingreds
       end
